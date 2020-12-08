@@ -1,0 +1,43 @@
+Arguments: 
+  /usr/local/bin/node /opt/yarn-v1.22.4/bin/yarn.js --non-interactive
+
+PATH: 
+  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  10.21.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /sandbox/package.json: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at /opt/yarn-v1.22.4/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/opt/yarn-v1.22.4/lib/cli.js:310:30)
+      at /opt/yarn-v1.22.4/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "python",
+    "version": "1.0.0",
+    "description": "",
+    "main": "src/index.js",
+    "scripts": {
+      "start": "nodemon src/index.js localhost 8080"
+    },
+    "dependencies": {},
+    "devDependencies": {
+      "nodemon": "1.18.4"
+    },
+    "keywords": []
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
