@@ -14,19 +14,27 @@ def turn(stop_angle, speed=7):
         print("current angle: {}".format(current_angle))
     motor_pair.stop()
 
+def return_flipper():
+    flipper.set_stall_detection(True)
+    flipper.run_for_seconds(.75, speed=100)
+    flipper.set_stall_detection(False)
+
 def flip_tire(move_back_distance):
-    flipper.start_at_power(50)
+    flipper.start_at_power(-50)
     wait_for_seconds(1.5)
     motor_pair.move(move_back_distance,unit='in',steering=0,speed=-50)
     flipper.stop()
+    return_flipper()
 
 
-# Tire Flip - Sam - 14
+# Tire Flip - Sam - Slot 5
 motor_pair = MotorPair('E','F')
 motor_pair.set_motor_rotation(8.75 * math.pi,'cm')
 flipper = Motor('D')
 flipper.set_stall_detection(False)
 flipper.set_degrees_counted(0)
+
+return_flipper()
 
 #1
 # motor_pair.move(7,unit='in',steering=0,speed=8)
@@ -34,20 +42,15 @@ flipper.set_degrees_counted(0)
 # turn(-130)
 # motor_pair.move(2.85,unit='in',steering=0,speed=8)
 # flip_tire(8)
-# motor_pair.move(8,unit='in',steering=0,speed=25) # push tire forward
+# motor_pair.move(8,unit='in',steering=0,speed=25)
 
 #2
 motor_pair.move(7,unit='in',steering=0,speed=8)
-motor_pair.move(46,unit='in',steering=0,speed=58)
+motor_pair.move(49,unit='in',steering=0,speed=58)
 turn(-90)
-motor_pair.move(8,unit='in',steering=0,speed=-15)
-motor_pair.move(7.75,unit='in',steering=0,speed=25) # push tire forward
-turn(-35)
+motor_pair.move(7,unit='in',steering=0,speed=-15)
+motor_pair.move(5,unit='in',steering=0,speed=25)
+turn(-45)
+motor_pair.move(5,unit='in',steering=0,speed=25)
 flip_tire(8)
-motor_pair.move(8,unit='in',steering=0,speed=25) # push tire forward
-
-
-
-
-
-
+motor_pair.move(8,unit='in',steering=0,speed=25)
