@@ -19,13 +19,13 @@ def turn(stop_angle, speed=7):
 
 
 
-motor_pair.move(5,unit='in',steering=0,speed=-10) #backward
-motor_pair.move(25,unit='in',steering=0,speed=-30) #backward
+motor_pair.move(5,unit='in',steering=0,speed=-10)
+motor_pair.move(25,unit='in',steering=0,speed=-30)
 turn(-80)
-motor_pair.move(8,unit='in',steering=0,speed=-30) #backward
-motor_pair.move(3,unit='in',steering=0,speed=-10) #backward
-# raiser.run_for_degrees(-1229, 80)
-motor_pair.move(3,unit='in',steering=0,speed=10) #backward
-motor_pair.move(8,unit='in',steering=0,speed=30) #backward
+motor_pair.move(8,unit='in',steering=0,speed=-30)
+motor_pair.move(3,unit='in',steering=0,speed=-10)
+raiser.run_for_degrees(-1229, 80)
+motor_pair.move(3,unit='in',steering=0,speed=10)
+motor_pair.move(8,unit='in',steering=0,speed=30)
 turn(80)
-motor_pair.move(30,unit=    'in',steering=0,speed=50) #backward
+motor_pair.move(30,unit='in',steering=0,speed=50)
